@@ -6,12 +6,6 @@
 #   Run FastQC on the cleaned (preprocessed) reads to verify
 #   that adapter trimming, contaminant removal and quality
 #   filtering improved the data.
-#
-# ORIGINAL COMMAND (from the report):
-#   mkdir clean
-#   fastqc -o clean --nogroup -t 2 quality/*clean_R?.fastq.gz
-#
-# Here we just generalize paths so it fits this repo layout.
 # ------------------------------------------------------------
 
 set -euo pipefail
