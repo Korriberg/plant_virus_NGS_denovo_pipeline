@@ -28,6 +28,14 @@ Given a WGS/RNA-seq library prepared from infected plant tissue:
 
 ---
 
+## Reference genome
+Download the CMV reference genome from NCBI:
+
+https://www.ncbi.nlm.nih.gov/assembly/GCF_000864745.1
+
+Place the FASTA file here:
+resources/CMV_ref.fasta
+
 ## Assembly parameter optimization
 
 To obtain the best possible de novo assembly of the viral genomes, multiple SPAdes assemblies were performed using different k-mer combinations. Assembly quality was evaluated using contig statistics such as total assembly length, longest contig, and N50 (via BBTools’ `stats.sh` tool). :contentReference[oaicite:0]{index=0}
@@ -74,5 +82,54 @@ The course dataset cannot be redistributed.
 To reproduce, substitute any paired-end plant virus dataset and place FASTQ files in `data/raw/`.
 
 ## Tools
+This pipeline uses the following tools and packages. Please cite them if you use this workflow in academic work.
 FastQC, BBTools (bbduk), SPAdes, BLAST, Bowtie2, Samtools, Qualimap, Picard, Freebayes, SnpEff.
 Tool versions / parameters are documented in `scripts/`.
+
+This workflow uses common NGS analysis tools. Versions may vary depending on the user's environment; see individual tool documentation for installation and usage details.
+
+### References
+
+**FastQC**  
+Andrews S. (2010). *FastQC: A quality control tool for high throughput sequence data.*  
+https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+
+**BBTools / BBDuk / stats.sh**  
+Bushnell B. (2014). *BBMap: A Fast, Accurate, Splice-Aware Aligner.*  
+https://sourceforge.net/projects/bbmap/
+
+**SPAdes genome assembler**  
+Bankevich A. et al. (2012). *SPAdes: A New Genome Assembly Algorithm and Its Applications to Single-Cell Sequencing.* J Comput Biol.  
+https://github.com/ablab/spades
+
+**BLAST+**  
+Camacho C. et al. (2009). *BLAST+: Architecture and applications.* BMC Bioinformatics 10, 421.
+
+**Bowtie2**  
+Langmead B., Salzberg S. (2012). *Fast gapped-read alignment with Bowtie2.* Nat Methods 9, 357–359.  
+http://bowtie-bio.sourceforge.net/bowtie2
+
+**Samtools**  
+Li H. et al. (2009). *The Sequence Alignment/Map format and SAMtools.* Bioinformatics.  
+http://www.htslib.org/
+
+**Picard Toolkit**  
+Broad Institute. (2019). *Picard Toolkit.*  
+https://broadinstitute.github.io/picard/
+
+**Qualimap**  
+García-Alcalde F. et al. (2012). *Qualimap: evaluating next-generation sequencing alignment data.* Bioinformatics.  
+http://qualimap.bioinfo.cipf.es/
+
+**FreeBayes**  
+Garrison E., Marth G. (2012). *Haplotype-based variant detection from short-read sequencing.*  
+arXiv:1207.3907.  
+https://github.com/freebayes/freebayes
+
+**vcffilter (vcflib)**  
+Garrison E. et al. *vcflib: A C++ library for parsing and manipulating VCF files.*  
+https://github.com/vcflib/vcflib
+
+**SnpEff**  
+Cingolani P. et al. (2012). *A program for annotating and predicting the effects of SNPs.* Fly (Austin).  
+https://pcingola.github.io/SnpEff/
