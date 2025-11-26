@@ -151,3 +151,7 @@ https://github.com/vcflib/vcflib
 **SnpEff**  
 Cingolani P. et al. (2012). *A program for annotating and predicting the effects of SNPs.* Fly (Austin).  
 https://pcingola.github.io/SnpEff/
+
+
+## Disclaimer
+This repository contains a reproducible workflow but does not include raw sequencing data or the CMV reference genome. Users must supply their own input FASTQ files and download public reference genomes as described. The workflow is provided “as is” without warranty; verify results independently before use in research or diagnostics.
