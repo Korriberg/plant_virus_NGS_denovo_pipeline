@@ -31,22 +31,23 @@ Given a WGS/RNA-seq library prepared from infected plant tissue:
 ```mermaid
 flowchart TD
 
-    A[Raw FASTQ<br>(data/raw)] --> B[FastQC<br>01_fastqc_raw.sh]
+    A[Raw FASTQ (data/raw)] --> B[FastQC\n01_fastqc_raw.sh]
 
-    B --> C[Adapter trimming<br>02_trim_adapters_bbduk.sh]
-    C --> D[Contaminant removal<br>03_remove_contaminants_bbduk.sh]
-    D --> E[Quality filtering<br>04_quality_trim_bbduk.sh]
+    B --> C[Adapter trimming\n02_trim_adapters_bbduk.sh]
+    C --> D[Contaminant removal\n03_remove_contaminants_bbduk.sh]
+    D --> E[Quality filtering\n04_quality_trim_bbduk.sh]
 
-    E --> F[FastQC (clean)<br>05_fastqc_clean.sh]
-    E --> G[De novo assembly (SPAdes)<br>06_denovo_spades.sh]
+    E --> F[FastQC (clean)\n05_fastqc_clean.sh]
+    E --> G[De novo assembly (SPAdes)\n06_denovo_spades.sh]
 
-    G --> H[BLAST identification<br>docs/07_blast_identification.md]
+    G --> H[BLAST identification\ndocs/07_blast_identification.md]
 
-    H --> I[Mapping to CMV reference (Bowtie2)<br>08_mapping_bowtie2.sh]
-    I --> J[Duplicate removal + read groups (Picard)<br>09_bam_processing_picard.sh]
+    H --> I[Mapping to CMV reference (Bowtie2)\n08_mapping_bowtie2.sh]
+    I --> J[Duplicate removal + read groups (Picard)\n09_bam_processing_picard.sh]
 
-    J --> K[Variant calling (FreeBayes)<br>10_variant_call_freebayes.sh]
-    K --> L[Variant annotation (SnpEff)<br>11_snpeff_annotation.sh]
+    J --> K[Variant calling (FreeBayes)\n10_variant_call_freebayes.sh]
+    K --> L[Variant annotation (SnpEff)\n11_snpeff_annotation.sh]
+
 ```
 
 ---
