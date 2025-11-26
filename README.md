@@ -30,23 +30,17 @@ Given a WGS/RNA-seq library prepared from infected plant tissue:
 
 ```mermaid
 flowchart TD
-
-    A[Raw FASTQ (data/raw)] --> B[FastQC\n01_fastqc_raw.sh]
-
-    B --> C[Adapter trimming\n02_trim_adapters_bbduk.sh]
-    C --> D[Contaminant removal\n03_remove_contaminants_bbduk.sh]
-    D --> E[Quality filtering\n04_quality_trim_bbduk.sh]
-
-    E --> F[FastQC (clean)\n05_fastqc_clean.sh]
-    E --> G[De novo assembly (SPAdes)\n06_denovo_spades.sh]
-
-    G --> H[BLAST identification\ndocs/07_blast_identification.md]
-
-    H --> I[Mapping to CMV reference (Bowtie2)\n08_mapping_bowtie2.sh]
-    I --> J[Duplicate removal + read groups (Picard)\n09_bam_processing_picard.sh]
-
-    J --> K[Variant calling (FreeBayes)\n10_variant_call_freebayes.sh]
-    K --> L[Variant annotation (SnpEff)\n11_snpeff_annotation.sh]
+    A["Raw FASTQ (data/raw)"] --> B["FastQC (01_fastqc_raw.sh)"]
+    B --> C["Adapter trimming (02_trim_adapters_bbduk.sh)"]
+    C --> D["Contaminant removal (03_remove_contaminants_bbduk.sh)"]
+    D --> E["Quality filtering (04_quality_trim_bbduk.sh)"]
+    E --> F["FastQC clean (05_fastqc_clean.sh)"]
+    E --> G["De novo assembly SPAdes (06_denovo_spades.sh)"]
+    G --> H["BLAST identification (docs/07_blast_identification.md)"]
+    H --> I["Mapping to CMV (08_mapping_bowtie2.sh)"]
+    I --> J["Duplicate removal + RG (09_bam_processing_picard.sh)"]
+    J --> K["Variant calling FreeBayes (10_variant_call_freebayes.sh)"]
+    K --> L["Variant annotation SnpEff (11_snpeff_annotation.sh)"]
 
 ```
 
