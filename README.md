@@ -38,7 +38,7 @@ resources/CMV_ref.fasta
 
 ## Assembly parameter optimization
 
-To obtain the best possible de novo assembly of the viral genomes, multiple SPAdes assemblies were performed using different k-mer combinations. Assembly quality was evaluated using contig statistics such as total assembly length, longest contig, and N50 (via BBTools’ `stats.sh` tool). :contentReference[oaicite:0]{index=0}
+To obtain the best possible de novo assembly of the viral genomes, multiple SPAdes assemblies were performed using different k-mer combinations. Assembly quality was evaluated using contig statistics such as total assembly length, longest contig, and N50 (via BBTools’ `stats.sh` tool).
 
 ### Evaluated k-mer sets
 Several k-mer configurations were tested, including:
